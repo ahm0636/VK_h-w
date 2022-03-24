@@ -30,9 +30,6 @@ class ViewController: UIViewController {
             myErrorLabel.text = "Input your login/password"
             myErrorLabel.textColor = UIColor.red
         }
-//        else {
-//            myErrorLabel.text = "invalid user"
-//        }
     }
 
     @objc func keyboardWasShown(notification: Notification) {
@@ -73,8 +70,16 @@ class ViewController: UIViewController {
                                                     UIResponder.keyboardWillHideNotification, object: nil)
     }
 
-
-
+    override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
+        if let identifierr = identifier {
+            if identifierr == "segue" {
+                if loginText.text != "judge0636" && passwordText.text != "34567" {
+                    return false
+                }
+            }
+        }
+        return true
+    }
 
     @objc func hideKeyboard() {
         self.scrollView?.endEditing(true)
@@ -84,15 +89,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         //  жест нажатия
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action:
-        #selector(hideKeyboard))
+                                                            #selector(hideKeyboard))
         // Присваиваем его UIScrollVIew
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
 
 
         // Do any additional setup after loading the view.
     }
-
-
     
 
 }
