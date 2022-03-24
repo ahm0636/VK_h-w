@@ -17,6 +17,7 @@ class MyCollectionCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -30,6 +31,7 @@ class MyCollectionCollectionViewController: UICollectionViewController {
     // MARK: - Navigation
 
 
+    
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
