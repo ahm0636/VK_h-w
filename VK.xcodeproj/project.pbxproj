@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		679C49C927EC559B009E3A5A /* FirstItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679C49C827EC559B009E3A5A /* FirstItemTableViewController.swift */; };
+		679C49CB27EC55D0009E3A5A /* SecondItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679C49CA27EC55D0009E3A5A /* SecondItemTableViewController.swift */; };
+		679C49CE27EC564A009E3A5A /* MyCollectionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679C49CD27EC564A009E3A5A /* MyCollectionCollectionViewController.swift */; };
+		679C49D027EC56A6009E3A5A /* FromSecondItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679C49CF27EC56A6009E3A5A /* FromSecondItemTableViewController.swift */; };
 		67FA5B3327D767D10029D091 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FA5B3227D767D10029D091 /* AppDelegate.swift */; };
 		67FA5B3527D767D10029D091 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FA5B3427D767D10029D091 /* SceneDelegate.swift */; };
 		67FA5B3727D767D10029D091 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FA5B3627D767D10029D091 /* ViewController.swift */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		679C49C827EC559B009E3A5A /* FirstItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstItemTableViewController.swift; sourceTree = "<group>"; };
+		679C49CA27EC55D0009E3A5A /* SecondItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondItemTableViewController.swift; sourceTree = "<group>"; };
+		679C49CD27EC564A009E3A5A /* MyCollectionCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionCollectionViewController.swift; sourceTree = "<group>"; };
+		679C49CF27EC56A6009E3A5A /* FromSecondItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromSecondItemTableViewController.swift; sourceTree = "<group>"; };
 		67FA5B2F27D767D00029D091 /* VK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67FA5B3227D767D10029D091 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67FA5B3427D767D10029D091 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,9 +47,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		679C49CC27EC55EF009E3A5A /* TableViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				679C49C827EC559B009E3A5A /* FirstItemTableViewController.swift */,
+				679C49CA27EC55D0009E3A5A /* SecondItemTableViewController.swift */,
+				679C49CF27EC56A6009E3A5A /* FromSecondItemTableViewController.swift */,
+			);
+			path = TableViewControllers;
+			sourceTree = "<group>";
+		};
 		67FA5B2627D767D00029D091 = {
 			isa = PBXGroup;
 			children = (
+				679C49CC27EC55EF009E3A5A /* TableViewControllers */,
 				67FA5B3127D767D00029D091 /* VK */,
 				67FA5B3027D767D00029D091 /* Products */,
 			);
@@ -66,6 +85,7 @@
 				67FA5B3D27D767D60029D091 /* LaunchScreen.storyboard */,
 				67FA5B4027D767D60029D091 /* Info.plist */,
 				67FA5B4627D775600029D091 /* SuccessfullEnterViewController.swift */,
+				679C49CD27EC564A009E3A5A /* MyCollectionCollectionViewController.swift */,
 			);
 			path = VK;
 			sourceTree = "<group>";
@@ -141,9 +161,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				679C49D027EC56A6009E3A5A /* FromSecondItemTableViewController.swift in Sources */,
 				67FA5B4727D775610029D091 /* SuccessfullEnterViewController.swift in Sources */,
 				67FA5B3727D767D10029D091 /* ViewController.swift in Sources */,
+				679C49C927EC559B009E3A5A /* FirstItemTableViewController.swift in Sources */,
+				679C49CE27EC564A009E3A5A /* MyCollectionCollectionViewController.swift in Sources */,
 				67FA5B3327D767D10029D091 /* AppDelegate.swift in Sources */,
+				679C49CB27EC55D0009E3A5A /* SecondItemTableViewController.swift in Sources */,
 				67FA5B3527D767D10029D091 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
