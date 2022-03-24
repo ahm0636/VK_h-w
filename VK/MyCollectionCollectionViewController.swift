@@ -14,6 +14,7 @@ class MyCollectionCollectionViewController: UICollectionViewController {
 
     @IBOutlet weak var myImageView: UIImageView!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,7 +32,7 @@ class MyCollectionCollectionViewController: UICollectionViewController {
     // MARK: - Navigation
 
 
-    
+
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
