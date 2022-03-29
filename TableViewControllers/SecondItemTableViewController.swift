@@ -9,10 +9,15 @@ import UIKit
 
 class SecondItemTableViewController: UITableViewController {
 
+
+    // MARK: - ATTRIBUTES
     let data2 = [["John", "Jake"],
                        ["Alisa", "Paul", "Frannk"],
                        ["Remove Adds", "Rate us", "Feedback"]]
 
+    var groupNames = User.allMates[0].groups
+
+     // MARK: - Table view data source
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,20 +25,18 @@ class SecondItemTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return data2.count
+        return groupNames.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
         case self.tableView:
-            return self.data2[section].count
+            return self.groupNames.count
         default:
             return 0
         }
@@ -41,12 +44,13 @@ class SecondItemTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath)
-        cell.textLabel?.text = self.data2[indexPath.section][indexPath.row]
-        cell.textLabel?.textColor = .white
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as? SecondCellTableViewCell
+        cell?.groupName.text = groupNames[indexPath.row].name
+        cell?.groupPhoto.layer.cornerRadius = 75
+        cell?.groupPhoto.image = UIImage(named: "\(groupNames[indexPath.row].photo)")
+        cell?.textLabel?.textColor = .white
+        return cell ?? UITableViewCell()
     }
-
 
     /*
     // Override to support conditional editing of the table view.
