@@ -12,8 +12,7 @@ private let reuseIdentifier = "Cell"
 class MyCollectionCollectionViewController: UICollectionViewController {
 
 
-    @IBOutlet weak var myImageView: UIImageView!
-
+    var matesPhotosArray: [Photo?] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,22 +39,24 @@ class MyCollectionCollectionViewController: UICollectionViewController {
         return 0
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-        return 0
+        return matesPhotosArray.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? MatesDetailedCollectionViewCell
+        if let item = matesPhotosArray[indexPath.row] {
+            cell?.nameLabel.text = item.name
 
+            cell?.matesPhoto.image = UIImage(named: item.photo)
+        }
 
     
-        return cell
+        return cell ?? UICollectionViewCell()
     }
 
     // MARK: UICollectionViewDelegate
-
 
     // Uncomment this method to specify if the specified item should be highlighted during tracking
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {

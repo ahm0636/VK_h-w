@@ -43,7 +43,7 @@ struct Photo {
 
 extension Photo {
     static let allPhotos: [Photo] = [
-    Photo(photo: "hbghbg", name: "f")]
+    Photo(photo: "https://www.drivelinebaseball.com/wp-content/uploads/2020/12/push-up-2.jpg", name: "f")]
 }
     // MARK: - User model
 struct User {

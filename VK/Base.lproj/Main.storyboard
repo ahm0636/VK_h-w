@@ -313,15 +313,43 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="PjN-OO-cwm">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="PjN-OO-cwm" customClass="MatesDetailedCollectionViewCell" customModule="VK" customModuleProvider="target">
                                 <rect key="frame" x="9" y="0.0" width="396" height="164"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FbJ-vR-sdU">
                                     <rect key="frame" x="0.0" y="0.0" width="396" height="164"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wmu-hc-eep">
+                                            <rect key="frame" x="0.0" y="0.0" width="396" height="164"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hev-8G-r8g">
+                                            <rect key="frame" x="153" y="20" width="90" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="iru-mp-PlO"/>
+                                                <constraint firstAttribute="width" constant="100" id="y4x-ml-T8I"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Hev-8G-r8g" firstAttribute="leading" secondItem="FbJ-vR-sdU" secondAttribute="leading" constant="153" id="4Tt-Di-KSE"/>
+                                        <constraint firstAttribute="bottom" secondItem="wmu-hc-eep" secondAttribute="bottom" id="8P2-fB-FSv"/>
+                                        <constraint firstAttribute="trailing" secondItem="Hev-8G-r8g" secondAttribute="trailing" constant="153" id="NVl-46-zXh"/>
+                                        <constraint firstItem="Hev-8G-r8g" firstAttribute="top" secondItem="FbJ-vR-sdU" secondAttribute="top" constant="20" id="UL8-LR-Vyd"/>
+                                        <constraint firstItem="wmu-hc-eep" firstAttribute="leading" secondItem="FbJ-vR-sdU" secondAttribute="leading" id="W6i-qS-qiU"/>
+                                        <constraint firstAttribute="trailing" secondItem="wmu-hc-eep" secondAttribute="trailing" id="fEP-FV-yDB"/>
+                                        <constraint firstItem="wmu-hc-eep" firstAttribute="top" secondItem="FbJ-vR-sdU" secondAttribute="top" id="wQP-eV-hpY"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <size key="customSize" width="396" height="164"/>
+                                <connections>
+                                    <outlet property="matesPhoto" destination="wmu-hc-eep" id="5mh-XB-mUa"/>
+                                    <outlet property="nameLabel" destination="Hev-8G-r8g" id="W2C-0i-E7w"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -333,7 +361,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lln-8G-9kW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5277" y="777"/>
+            <point key="canvasLocation" x="5276.811594202899" y="776.78571428571422"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NNq-dj-gpM">
