@@ -9,81 +9,57 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class MyCollectionCollectionViewController: UICollectionViewController {
+class MyCollectionCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+
 
 
     var matesPhotosArray: [Photo?] = []
-    
+
+    let allFriends = User.allMates
+
+
+    var friend: User!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
     }
 
-
-    // MARK: - Navigation
-
+    @IBAction func test(_ sender: Any) {
+        print("tapped")
+    }
 
 
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
-        return matesPhotosArray.count
+        return friend.photo.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? MatesDetailedCollectionViewCell
-        if let item = matesPhotosArray[indexPath.row] {
-            cell?.nameLabel.text = item.name
 
-            cell?.matesPhoto.image = UIImage(named: item.photo)
-        }
 
-    
+        cell?.imageView.image =  UIImage(named: friend.photo[indexPath.row].photo)
+
+//        cell?.friendsName.text = friend.name
+
+
         return cell ?? UICollectionViewCell()
     }
 
     // MARK: UICollectionViewDelegate
-
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         return true
     }
 
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.view.frame.width / 2, height: self.view.frame.width / 2 )
     }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
 
 }

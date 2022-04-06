@@ -17,9 +17,6 @@ class FirstCellTableViewCell: UITableViewCell {
 //
 //    }
 
-
-
-
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userImage: UIImageView!
 
@@ -27,14 +24,27 @@ class FirstCellTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.userImage.contentMode = .scaleAspectFill
+
         self.userImage.clipsToBounds = true
-//        self.userImage.image = image.image
     }
+//
+//        likeButton.addTarget(
+//            self, action: #selector(handleHeartButtonTap(_:)), for: .touchUpInside)
+//        likeButton.imageView?.contentMode = .scaleAspectFill
+//        likeButton.imageEdgeInsets = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
+////        self.userImage.image = image.image
+//    }
+//
+//    @objc private func handleHeartButtonTap(_ sender: UIButton) {
+//      guard let button = sender as? HeartButton else { return }
+//      button.flipLikedState()
+//    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
+
 
 }
